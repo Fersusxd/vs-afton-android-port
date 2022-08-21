@@ -71,11 +71,14 @@ class StageData {
 		} else if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
 		}
-		
+		#else
+
 		if(Assets.exists(path)) {
 			rawJson = Assets.getText(path);
 		}
 		#end
+
+
 		
 		
 		else
