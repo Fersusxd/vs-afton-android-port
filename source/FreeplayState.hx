@@ -240,6 +240,10 @@ class FreeplayState extends MusicBeatState
 		changeSelection(0);
 		updateSongImage();
 
+		#if android
+	        addVirtualPad(LEFT_FULL, A_B_X_Y);
+                #end
+			
 		super.create();
 	}
 
