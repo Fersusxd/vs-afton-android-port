@@ -154,7 +154,11 @@ class MainMenuState extends MusicBeatState
 			ClientPrefs.saveSettings();
 		}
 		#end
-
+ 
+		#if android
+addVirtualPad(LEFT_FULL, A_B);
+#end
+	
 		super.create();
 	}
 
@@ -168,9 +172,7 @@ class MainMenuState extends MusicBeatState
 	}
 	#end
 
-		#if android
-addVirtualPad(LEFT_FULL, A_B);
-#end
+		
 	var selectedSomethin:Bool = false;
 
 	override function update(elapsed:Float)
