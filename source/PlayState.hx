@@ -2262,6 +2262,7 @@ class PlayState extends MusicBeatState
 		FlxTween.tween(timeBar, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 		FlxTween.tween(timeTxt, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 
+		#if desktop
 		switch(curSong){
 			case "Celebrate": curPortrait = "celebrate";
 			case "Follow-Me": curPortrait = "follow_me";
@@ -2274,7 +2275,8 @@ class PlayState extends MusicBeatState
 			case "Nightmare": curPortrait = "nightmare";
 			case "Fazbars": curPortrait = "fazbars";
 		}
-
+                #end
+			
 		#if desktop
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength);
